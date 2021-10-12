@@ -12,22 +12,15 @@ Quick and dirty way to download all pictures from specific real estate on Funda.
 Open console and enter the following JS.
 
 ```javascript
-var pics = document.getElementsByClassName("media-viewer-item-content");
+var pics = document.getElementsByClassName("media-viewer-overview__section-image");
 for (i = 0; i < pics.length; i++) {
-    if(!!pics[i].srcset) {
-      var url = pics[i].srcset.split(",")[5].split(" ")[1];
-      console.log(url); 
-  }
-    if(!!pics[i].getAttribute("data-lazy-srcset")) {
-      var url = pics[i].getAttribute("data-lazy-srcset").split(",")[5].split(" ")[1];
-      console.log(url); 
-  }
+ console.log(pics[i].src); 
 }
 ```
 
 ### Save output 
 
-Copy paste the output to links.txt
+Copy paste the output to links.txt, make sure every line only contains one URL and starts with https://
 
 ### Download images
 
